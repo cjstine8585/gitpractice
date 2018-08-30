@@ -127,11 +127,5 @@ int main(void)
   if(foundsolution==0){
     printf("No solutions were found.\n");
   }
-
-  /*print and scanf statement to ask the user if they would like to run the program again.
-   */
- 
-
-
   return (0);
 }
