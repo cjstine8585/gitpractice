@@ -1,0 +1,137 @@
+/*Filename: buffet.c*
+ *Part of: First A290 program*
+ *Created by: Calvin Stineburg*
+ *Created on: 08/22/2018*
+ *Last Modified by: Calvin Stineburg*
+ *Last Modified on: 08/30/2018*
+ */
+
+#include <stdio.h>
+
+int main(void)
+{
+ 
+
+
+  /* body of the program below here
+   *This next bit of print statements shows the number of bytes each 
+   *data type uses.
+   */ 
+  printf("sizeof(char) == %d\n", sizeof(char));
+  printf("sizeof(short) == %d\n", sizeof(short));
+  printf("sizeof(int) == %d\n", sizeof(int));
+  printf("sizeof(long) == %d\n", sizeof(long));
+  printf("sizeof(float) == %d\n", sizeof(float));
+  printf("sizeof(double) == %d\n", sizeof(double));
+  printf("sizeof(long double) == %d\n", sizeof(long double));
+  printf("sizeof(long long) == %d\n", sizeof(long long));
+
+  /*Variables declared during meeting 3 practice 1*/
+  int x,y;
+  char a;
+  float f,e;
+  double d;
+
+  /*Initialization of the above variables*/
+  x=4;
+  y=7;
+  a='H';
+  f=-3.4;
+  d=54.123456789;
+  e=54.123456789;
+
+  /*print statements that show the end results of the above variables*/
+  printf("%d %c %f %lf\n", x,a,e,d);
+  printf("%d %c %.9f %.9lf\n", x,a,e,d);
+
+  /*Here we declared some variables to be used for math practice*/
+
+  int r1,r2,r3,r4,r5;
+
+  /*some basic math practice using the above variables*/
+
+  r1=x+y;
+  r2=x-y;
+  r3=x/y;
+  r4=x*y;
+
+  /*print statement for the results of the above math practice*/
+
+  printf("%d %d %d %d\n", r1,r2,r3,r4);
+
+  /*another bit of math practice*/
+
+  r3++;
+  r4--;
+  r5=r4%r1;
+
+  /*print statement for the last set of math practice*/
+
+  printf("%d %d %d\n", r3,r4,r5);
+
+  /*The next part of this file will be the "squares" program
+   *I will be adapting Hoover's code to fit the requirements set in class
+   *The program will output all possible squares that add up to a given integer
+   */
+
+  /*Declaring the variables from Hoover's code*/
+
+  int i, j, number;
+ 
+  /*Added 'foundolution' so that the program outputs something to the user if no solutions were found*/
+ 
+  int foundsolution;
+  foundsolution=0;
+
+ 
+   /*print statement to prompt the user to enter a number*/
+
+  printf("Please enter a number: ");
+
+  /*scanner to take input from the user*/
+
+  scanf("%d", &number);
+
+  /*initialization of the 'i' variable*/
+
+  i=1;
+
+  /*the first while loop will be used to iterate through all squares 
+    less than or equal to the given number*/ 
+
+
+  while(i*i <= number)
+    {
+
+      /*initializtion of the second variable 'j' from Hoover's code. I will be using this and the following while loop to iterate through all of the possible numbers and find the solutions.*/
+
+      j=1;
+
+      /*I evaluated the program, runing through it multiple times until i understood it fully. i then realized that the only change i meeded to make in order for the program to work as described in class was to simply change the conditional in the second while loop from '<' to '<='. */
+
+      while(j <= i)
+	{
+
+	  if(i*i + j*j == number)
+	    {
+	      foundsolution = 1;
+	      printf("Found: %d + %d\n", i*i, j*j);
+	    
+	    }
+	  j++;
+	}
+	  i=i+1;
+    }
+  /*if statement to check if the program found any solutions
+   */
+  if(foundsolution==0){
+    printf("No solutions were found.\n");
+  }
+
+  /*print and scanf statement to ask the user if they would like to run the program again.
+   */
+ 
+
+
+  return (0);
+}
