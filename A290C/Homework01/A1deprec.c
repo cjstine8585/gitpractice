@@ -1,0 +1,68 @@
+/*Filename: A1deprec.c*
+ *Part of: Homework Assignment 1*
+ *Created by: Calvin Stineburg*
+ *Created on: 09/06/2018*
+ *Last Modified by: Calvin Stineburg*
+ *Last Modified on: 09/10/2018*
+ */
+
+#include <stdio.h>
+
+int main()
+{
+
+  /*in order to solve this problem I first did some basic algebra on paper
+   *the final equation that allwos me to find the salvage value is:
+   * ((Annual Deprec * years of service)- purchase price)*-1 = salvage value
+   */
+
+  /*here I declare all of the variables to be used in the program including:
+   * deprec = depretiation value
+   * price = purchase price
+   * servYears = years of service
+   * salvage = salvage value
+   */
+
+  double deprec;
+  double price;
+  double servYears;
+  double salvage;
+  char itemName[40];
+
+  /*I placed an introductory print statment to make the program "flow" a little better*/
+
+  printf("Welcome to the Salvage Value Calculator!\nPlease enter the name of your item: ");
+ 
+
+  /*scanning the user input*/
+
+  scanf("%s", itemName);
+
+  /*print/scan statement asking for the purchase price of the item*/
+  
+  printf("Please enter the purchase price of your %s: ", itemName);
+  scanf("%lf",&price);
+
+  /*print/scan statemtent asking for the years of service */
+
+  printf("Please enter the years of service for your %s: ", itemName);
+  scanf("%lf", &servYears);
+  
+ /*scan/print statement for the annual depreciation*/
+
+  printf("Please enter the annual depreciation of your %s (percentage): ", itemName);
+  scanf("%lf", &deprec);
+
+  /*Here I use the formula from the beginning of the program to calculate  salvage value*/  
+ 
+  salvage = ((deprec * servYears)-price)*(-1);
+
+  /*if statement to make sure a negative number is not outputed*/
+
+  if(salvage < 0)
+    salvage = 0;
+
+  printf("The salvage value for your %s is %.2lf\n", itemName, salvage);
+
+  return (0);
+}

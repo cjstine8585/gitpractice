@@ -1,0 +1,30 @@
+/*Filename: A1prime.c*
+ *Part of: Assignment 1*
+ *Created by: Calvin Stineburg*
+ *Created on: 09/10/2018*
+ *Last Modified by: Calvin Stineburg*
+ *Last Modified on: 09/10/2018*
+ */
+
+#include <stdio.h>
+
+int main()
+{
+
+  /* body */
+  double number;
+
+  printf("Please enter a number: ");
+  scanf("%lf", &number);
+
+  int i = 2;
+  while(i<number){
+    if(i==(number-1)
+       printf("1");
+    if(number%i==0)
+      printf("0");
+
+  }
+
+  return (0);
+}

@@ -1,0 +1,159 @@
+/*Filename: callingfunc.c*
+ *Part of: HOMEWORK Progam 2*
+ *Created by: Calvin Stineburg*
+ *Created on: 09/14/2018*
+ *Last Modified by: Calvin Stineburg*
+ *Last Modified on: 09/14/2018*
+ */
+
+#include <stdio.h>
+
+
+
+
+  /*conditionals function used to show all of the examples done in class*/
+
+  void conditionals(){
+
+    printf("First Example:\n");
+
+    int i,x;
+    x=0;
+
+    /*this for loop iterates from 0-4
+     *it will add 1 to x if the number is i or divisible by 2
+     *otherwise it will subtract i from x
+     */
+
+    for(i=0;i<5;i++)
+      {
+	if(i%2 == 0|| i == 1)
+	  x=x+i;
+	else
+	  x=x-i;
+	printf("%d\n",x);      
+      }
+
+    /*grade holds the input number from the user*/
+    int grade;
+
+    /*print statement promts user to enter the grade*/
+    printf("Switch-case example:\n");
+    printf("Enter grade: \n");
+    scanf("%d", &grade);
+
+    /*switch case used to "switch between the options that a user can input for the grade (integers between 1-5)*/
+
+    switch (grade) {
+    case 1:
+      printf("Fail\n");break;
+    case 2: 
+      printf("Not good (D)\n");break;
+    case 3: 
+      printf("Good (C)\n"); break;
+    case 4: 
+      printf("Very Good (B)\n");break;
+    case 5:
+      printf("Excelent (A)\n");break;
+    default:
+      printf("You have not entered a valid grade value.\n");
+      break;
+    }
+
+
+  }
+
+  /*here I will be creating the "loops" function*/
+
+  void loops()
+  {
+    int i,x;
+    x=0;
+
+    printf("For loop example:\n");
+
+    /*This for loop will run eexactly 4 times. It will iterate through the numbers 0, 1, 2, and 3.*/
+
+    for(i=0; i<4; i++)
+      {
+	x=x+i;
+	printf("%d\n",x);
+      }
+
+    /* Next I will be creating the while loop that was done in class. The starting value of "i" for this loop is 4 because of the previous iterations in the for loop */
+
+    printf("While loop example:\n");
+
+    while(i<7)
+      {
+	x = x+i;
+	i++;
+	printf("%d\n",x);
+      }
+
+    /*Finally we have the do-while loop. This loop runs at least once and the starting value for "i" will be 7.*/
+
+    printf("Do-while loop example:\n");
+
+    do
+      {
+	x=x+i;
+	i++;
+	printf("%d\n",x);
+      }
+    while (i<9);
+    
+  }
+
+  /*this will be my version of the function done in class
+   *this function will re-organize the items in an array
+   */
+  void firstswap()
+  {
+    /*here i declare the variables to be used in the program*/
+
+    int i,j,k,swap;
+
+    /*declaration of an array with 8 indexes*/
+
+    char c[8];
+    c[0]='f';c[1]='r';c[2]='o';c[3]='g';c[4]=0;
+
+    printf("Intitial Values for first 5 indexes: %c, %c, %c, %c, %c\n",c[0],c[1],c[2],c[3],c[4]);
+
+    for(i=0;i<4;i++)
+      {
+
+	k=i;
+
+	for(j=i+1;j<4;j++){
+
+	  if(c[j]-c[k]<10)/*this takes the index of c[k] and subtracts it from  the index directly in front of it (c[j]) 
+			   *it then asks if the result is less than 10 and if   the conditions are met then k=j
+			   *this effectively swaps the indexes of c[k] and c[j]and after several iterations it will organize all of the items in the array.
+			   */
+	    k=j;
+	}
+	  swap = c[i];
+	  c[i]=c[k];
+	  c[k]=swap;
+      }
+
+	printf("Final Values:\ni: %d\nj: %d\nk: %d\nswap: %d\n",i,j,k,swap);
+	printf("Final Values of first five cells after swap:\n%c,%c,%c,%c,%c\n",c[0],c[1],c[2],c[3],c[4]);
+  }
+
+
+int main(void){
+  /*finally, here in the main I call all of the functions that were created*/
+
+  printf("*****************THE LOOPS FUNCTION*********************\n\n");
+  loops();
+  printf("*****************THE CONDITIONALS FUNCTION****************\n\n");
+  conditionals();
+  printf("********************THE ARRAYS FUNCTION***************************\n\n");
+  firstswap();
+
+  return(0);
+}
+

@@ -1,0 +1,68 @@
+/*Filename: A1prime.c*
+ *Part of: Assignment 1*
+ *Created by: Calvin Stineburg*
+ *Created on: 09/10/2018*
+ *Last Modified by: Calvin Stineburg*
+ *Last Modified on: 09/10/2018*
+ */
+
+#include <stdio.h>
+
+int main()
+{
+
+  /*Decalring of the input variable to store user input
+   *printf statement to prompt user for input
+   *if statements then call the method i created to determine if the input number is prime */  
+  int input;
+
+  printf("Welcome to the Prime Calculator!\nThis program will determine whether or not the number you give it is prime. \nPlease enter a number: ");
+  scanf("%d", &input);
+
+  if( primeCalc(input)==0){
+    printf("%d is not a prime number.\n",input);
+  }
+  if(primeCalc(input)==1){
+    printf("%d is a prime number.\n",input);
+
+  }
+
+return(0);
+
+    }
+
+/*Here I create the method that takes an input integer used to determine if the input is prime*/
+
+  int primeCalc(int number){
+
+    /*Create variable i to act as an index for the for loop
+     *int checker is ticked to either one or zero based on if the number meets the condition of the for statment*/
+          
+    int checker=1;
+
+    if(number<=1){
+      return;
+    }
+    /*for statement to iterate through all numbers that are less than 1/2 of the original number. We only need to use half the size of the original number because we will not get a correct output if we check all of the "relevant" numbers twice.*/
+
+
+
+    else{
+      int i=2;
+      for(i; i<=number/2; i++){
+    
+      /*if statement to check whether or not the number is divisible by a number other than 1 or itself
+      *If the condition is met the checker is changed to 0 in order to represent that this number is not prime.*/
+
+	if(number%i==0){
+	  checker = 0;
+	}
+
+      /*no need for an else statement because if the number never meets the conditions above, then the checker will stay as 1 and the output will be that the number is prime.*/
+      }
+    }
+	return checker;
+      	
+    
+  }
+
