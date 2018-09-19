@@ -1,0 +1,97 @@
+/*Filename: A2.c*
+ *Part of: HOMEWORK Progam 2*
+ *Created by: Calvin Stineburg*
+ *Created on: 09/14/2018*
+ *Last Modified by: Calvin Stineburg*
+ *Last Modified on: 09/17/2018*
+ */
+
+#include <stdio.h>
+
+
+
+int main()
+{
+
+  /* size used to store the size of the array
+   *i and j used later as iterators in the for loops 
+   */
+
+  int size,i,j;
+
+  /*asking user for input and storing the input in size variable*/
+
+  printf("Please enter the size of the arrays: ");
+  scanf("%d", &size);
+
+  /*declaring the two arrays and intitializing them based on the user input for size */
+
+  int A1[size];
+  int A2[size];
+
+  /*asking the user for elements of the array
+   *placing them in the arrays using a for loop
+   */  
+  printf("Enter the elements of the first array: ");
+
+  for(i=0; i<size; i++)
+    {
+      scanf("%d", &A1[i]);
+
+    }
+
+  /* for loop to make sure that elements were being placed in the array
+ 
+  int a;
+  for(a=0;a<size;a++)
+    {
+      printf("%d", A1[a]);
+      printf(" ");
+    }
+  */
+  printf("Enter the elements of the second array: ");
+ 
+  for(j=0;j<size;j++)
+    {
+      scanf("%d",&A2[j]);
+    }
+
+  int n,m;
+  int inter[100];
+  int index=0;
+
+  /*First for loop: picks the first index of the first array
+   *Second loop: compares the first index with all elements in the second array
+   *the process repeats until all intersecting elements are found
+   */
+
+  for(n=0;n<size;n++)
+    {
+
+      for(m=0;m<size;m++)
+	{
+
+	if(A1[n]==A2[m])
+	  {
+	    inter[index]=A1[n];
+	    index=index+1;
+	    break;/*The break statement to make sure no elements are repeated*/
+
+	  }
+	}
+    }
+ 
+ /*This loop is used to print the intersection of the two arrays*/
+
+      int t;
+      printf("The intersection of the two arrays is: ");
+
+      for(t=0;t<index;t++)
+	{
+	  printf("%d", inter[t]);
+
+	  if(t==index-1) printf("\n");
+	}
+
+
+}
