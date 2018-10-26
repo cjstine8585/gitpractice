@@ -1,30 +1,5 @@
 #include <stdio.h>
 
-<<<<<<< HEAD
-
-int main(){
-int test[3];
-int i;
-
-test[0]=5;
-test[1]=10;
-test[2]=7;
-
-printf("array size: %d\n",sizeof(test));
-void sortArray(int number[]);
-
-sortArray(test);
-
-for(i=0;i<sizeof(test);i++)
-{
-    printf(" %d ", test[i]);
-
-}
-    printf("\n");
-}
-
-=======
->>>>>>> 0999342ac09009e78e4710f2a4f2b1ed25677c1d
 void sortArray(int number[])
 {
     int i,j,a;
