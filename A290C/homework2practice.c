@@ -10,6 +10,7 @@ test[1]=10;
 test[2]=7;
 
 printf("array size: %d\n",sizeof(test));
+void sortArray(int number[]);
 
 sortArray(test);
 
